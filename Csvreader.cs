@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System Text;
+using System.Text;
 using System.Linq;
 namespace Csvreader
 {
@@ -10,7 +10,7 @@ namespace Csvreader
 
         static void Main(string[] args)
         {
-            var recordFile = File.ReadAllLines("C:/CSVRecord.csv");
+            var recordFile = File.ReadAllLines("C:/100 Records.csv");
 
             var List = from historyPrice in recordFile
                        let data = historyPrice.Split(',')
