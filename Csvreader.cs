@@ -51,8 +51,6 @@ namespace Csvreader
                     break;
 
             }
-             
-        
         }
         static void location(List<string> List,string loc)
         {
@@ -87,7 +85,6 @@ namespace Csvreader
                 Console.WriteLine(detail.Employee_ID + "|" + "|" + detail.Name + "|" + detail.DOB + "|" + detail.Designation + "|" + detail.Location);
             }
         }
-
     }
 }
 
