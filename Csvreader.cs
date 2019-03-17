@@ -1,10 +1,11 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System Text;
 using System.Linq;
 namespace Csvreader
 {
-    public class csv1
+    public class csvclass
     {
 
         static void Main(string[] args)
@@ -22,66 +23,36 @@ namespace Csvreader
                            Location = data[4]
                            
                        };
-
-            foreach (var price in List)
-            {
-                Console.WriteLine(price.Employee + "|" + price.Name + "|" + price.date + "|" + price.designation + "|" + price.Location);
-            }
-
-            Console.WriteLine("enter the choice" +
-                "1.loc" + "2.DOB" + "3.designation");
-            int ch = Convert.ToInt32(Console.ReadLine());
-            switch (ch)
-            {
-                case 1:
-                    Console.WriteLine("enter the location name");
-                    var loc= Console.ReadLine();
-                    location(List,loc);
-                    break;
-                case 2:
-                    Console.WriteLine("enter the Dob");
-                    //var date = DateTime.Now.ToString("dd/MM/yyyy");
-                    DateTime dob = Convert.ToDateTime(Console.ReadLine());
-                    dateofbirth(List,dob);
-                    break;
-                case 3:
-                    Console.WriteLine("enter designation");
-                    var des = Console.ReadLine();
-                    Designation(List, des);
-                    break;
-
-            }
         }
-        static void location(List<string> List,string loc)
+           
+        static void location(string List,string loc)
         {
            
             var record = List.Where(e => e.Location == loc);
-            foreach (var detail in record)
+            foreach (var loca in record)
             {
-                Console.WriteLine(detail.Employee_ID + "|" + "|" + detail.Name + "|" + detail.DOB + "|" + detail.Designation + "|" + detail.Location);
+                Console.WriteLine(loca.Employee_ID + "|" + "|" + loca.Name + "|" + loca.DOB + "|" + loca.Designation + "|" + loca.Location);
             }
         }
-        static void dateofbirth(List<string> List,DateTime date)
+        static void dateofbirth(string List,DateTime date)
         {
             var dateAndTime = DateTime.Now;
             date = dateAndTime.Date;
             
             var record = List.Where(e => e.DOB <= date);
-            foreach (var detail in record)
+            foreach (var birthdate in record)
             {
-                Console.WriteLine(detail.Employee_ID + "|" + "|" + detail.Name + "|" + detail.DOB + "|" + detail.Designation + "|" + detail.Location);
+                Console.WriteLine(birthdate.Employee_ID + "|" + "|" + birthdate.Name + "|" + birthdate.DOB + "|" + birthdate.Designation + "|" + birthdate.Location);
             }
 
         }
-        static void Designation( List<string> List,string des)
+        static void Designation( string List,string des)
         {
             var record = List.Where(e => e.Designation == des);
-            foreach (var detail in record)
+            foreach (var desig in record)
             {
-                Console.WriteLine(detail.Employee_ID + "|" + "|" + detail.Name + "|" + detail.DOB + "|" + detail.Designation + "|" + detail.Location);
+                Console.WriteLine(desig.Employee_ID + "|" + "|" + desig.Name + "|" + desig.DOB + "|" + desig.Designation + "|" + desig.Location);
             }
-             Console.WriteLine("Press any key to exit");
-             Console.ReadLine();
         }
     }
 }
