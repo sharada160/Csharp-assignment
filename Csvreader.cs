@@ -60,10 +60,6 @@ namespace Csvreader
             {
                 Console.WriteLine(detail.Employee_ID + "|" + "|" + detail.Name + "|" + detail.DOB + "|" + detail.Designation + "|" + detail.Location);
             }
-            
-
-            Console.WriteLine("Press any key to exit");
-            Console.ReadLine();
         }
         static void dateofbirth(List<string> List,DateTime date)
         {
@@ -84,6 +80,8 @@ namespace Csvreader
             {
                 Console.WriteLine(detail.Employee_ID + "|" + "|" + detail.Name + "|" + detail.DOB + "|" + detail.Designation + "|" + detail.Location);
             }
+             Console.WriteLine("Press any key to exit");
+             Console.ReadLine();
         }
     }
 }
